@@ -191,8 +191,11 @@ map.C = `((()=>{})[${fromString("constructor")}](${fromString("return escape")})
 /*if wer done with the adding characters in map we just need a function 
 that can take any code and converts into weired looking js code (symbol code or obfuscated js code)*/ 
 
+fromString("Z") // long weired looking code of letter Z
+
 /*  let's test this compiler funciton in vs code here it might not be run */
 const compiler = code => `(()=>{})[${fromString("constructor")}](${fromString(code)})`
 
-fromString("Z") // long weired looking code of letter Z
+console.log(compiler("console.log('Hello from weired js')")) // this will be converted and written in output.js file with the comman (node currentFile.js > fileYouWantToGenerate.js) node index.js > output.js
+
 
